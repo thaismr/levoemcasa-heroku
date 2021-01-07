@@ -119,11 +119,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# try:
-#     from env.local_settings import *
-# except:
-#     pass
 
 import django_heroku
 
-django_heroku.settings(locals())
+try:
+    from .env.local_settings import *
+    print('Settings imported.')
+except:
+    print('Settings not imported.')
+    django_heroku.settings(locals())
+
+
+
