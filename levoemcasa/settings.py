@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # TODO: Remove debug toolbar for production environment
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +52,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # TODO: Remove debug toolbar for production environment
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'levoemcasa.urls'
@@ -153,6 +159,14 @@ MESSAGE_TAGS = {
 # Session in days: 60s * 60m * 24h * 7 days
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
 SESSION_SAVE_EVERY_REQUEST = False
+
+
+# DEBUG TOOLBAR
+# ------------------------------------------------------------------------------
+# https://django-debug-toolbar.readthedocs.io/en/latest/index.html#
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 
 import django_heroku
