@@ -24,6 +24,7 @@ class Product(models.Model):
 
     def get_price_from(self):
         return f'R$ {self.price_from:.2f}'.replace('.', ',')
+    # get_price_from.short_description = 'Preco base'
 
     '''
     Overwrite save() to add functionality.
