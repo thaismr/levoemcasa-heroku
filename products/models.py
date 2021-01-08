@@ -1,15 +1,16 @@
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
-# from categories.models import Category
 from store.models import Store
+from categories.models import Category
 from utils import img_utils
 
 
 # Create your models here.
 class Product(models.Model):
-    store = models.ForeignKey(Store, on_delete=models.DO_NOTHING, verbose_name='Loja')
     name = models.CharField(max_length=50, verbose_name='Nome')
+    store = models.ForeignKey(Store, on_delete=models.DO_NOTHING, verbose_name='Loja')
+    category = models.ManyToManyField(Category, related_name='items')
     slug = models.SlugField(unique=True)
     summary = models.TextField(max_length=450, verbose_name='Resumo')
     description = models.TextField(verbose_name='Descricao')
@@ -20,6 +21,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_price_from(self):
+        return f'R$ {self.price_from:.2f}'.replace('.', ',')
 
     '''
     Overwrite save() to add functionality.
@@ -37,8 +41,8 @@ class Product(models.Model):
 
 # Product Variations
 class Variation(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     summary = models.CharField(max_length=255)
     image = models.ImageField(upload_to='store_images/%Y/%m/', blank=True, null=True)
     price = models.FloatField()
