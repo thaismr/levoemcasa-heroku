@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 # from categories.models import Category
 from store.models import Store
-from PIL import Image
 from utils import img_utils
 
 
