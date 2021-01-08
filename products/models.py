@@ -3,6 +3,7 @@ from django.conf import settings
 # from categories.models import Category
 from store.models import Store
 from PIL import Image
+from utils import img_utils
 
 
 # Create your models here.
@@ -20,27 +21,13 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-    @staticmethod       # doesn't alter the class
-    def resize_image(img_name, new_width):
-        img_path = str(settings.MEDIA_ROOT + '/' + img_name)
-        img = Image.open(img_path)
-        width, height = img.size
-
-        if width > new_width:
-            new_height = round(
-                (new_width * height) / width
-            )
-            img = img.resize((new_width, new_height), Image.LANCZOS)
-
-        img.save(img_path, optimize=True, quality=60)
-        img.close()
-
     '''
     Overwrite save() to resize image.
     '''
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        self.resize_image(self.image.name, 800)
+        img_path = str(settings.MEDIA_ROOT + '/' + self.image.name)
+        img_utils.img_resize(img_path, 800)
 
 
 # Product Variations
@@ -56,25 +43,11 @@ class Variation(models.Model):
     def __str__(self):
         return self.name
 
-    @staticmethod       # doesn't alter the class
-    def resize_image(img_name, new_width):
-        img_path = str(settings.MEDIA_ROOT + '/' + img_name)
-        img = Image.open(img_path)
-        width, height = img.size
-
-        if width > new_width:
-            new_height = round(
-                (new_width * height) / width
-            )
-            img = img.resize((new_width, new_height), Image.LANCZOS)
-
-        img.save(img_path, optimize=True, quality=60)
-        img.close()
-
     '''
     Overwrite save() to resize image.
     '''
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        self.resize_image(self.image.name, 800)
+        img_path = str(settings.MEDIA_ROOT + '/' + self.image.name)
+        img_utils.img_resize(img_path, 800)
 
