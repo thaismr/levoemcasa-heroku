@@ -20,7 +20,7 @@ class UserProfile(models.Model):
 
 
 class UserAddress(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     place_name = models.CharField(max_length=50, verbose_name='Nome do local')
     zip_code = models.CharField(max_length=8, verbose_name='CEP')
     street = models.CharField(max_length=50)
