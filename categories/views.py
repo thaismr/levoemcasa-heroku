@@ -7,3 +7,5 @@ from . models import Category
 # Create your views here.
 class ListCategories(ListView):
     model = Category
+    context_object_name = 'categories'
+    paginate_by = 3

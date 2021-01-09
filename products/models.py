@@ -3,7 +3,7 @@ from django.conf import settings
 from django.utils.text import slugify
 from store.models import Store
 from categories.models import Category
-from utils import img_utils
+from utils import img_utils, format
 
 
 # Create your models here.
@@ -23,8 +23,12 @@ class Product(models.Model):
         return self.name
 
     def get_price_from(self):
-        return f'R$ {self.price_from:.2f}'.replace('.', ',')
+        return format.price_in_real(self.price_from)
+        # return f'R$ {self.price_from:.2f}'.replace('.', ',')
     # get_price_from.short_description = 'Preco base'
+
+    def get_price_sale(self):
+        return format.price_in_real(self.price_sale)
 
     '''
     Overwrite save() to add functionality.
