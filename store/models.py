@@ -3,12 +3,14 @@ from django.conf import settings
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from utils import img_utils
+from categories.models import Category
 
 
 # Create your models here.
 class Store(models.Model):
-    admin = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=50)
+    admin = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    categories = models.ManyToManyField(Category, blank=True)
     slug = models.SlugField(unique=True)
     slogan = models.CharField(max_length=250)
     description = models.TextField()
