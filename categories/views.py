@@ -7,5 +7,11 @@ from . models import Category
 # Create your views here.
 class ListCategories(ListView):
     model = Category
-    context_object_name = 'categories'
     paginate_by = 3
+    context_object_name = 'categories'
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        # qs = qs.select_related('parent')     # Optimized query to get related category data
+        qs = qs.filter(parent=None)
+        return qs

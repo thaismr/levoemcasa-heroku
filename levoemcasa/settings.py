@@ -21,8 +21,6 @@ APPS_DIR = BASE_DIR / 'levoemcasa'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&mi4z466)6+^!1ijji-yfg_1^^)z!mm2mctn=5#7g9#8h^gx)6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
