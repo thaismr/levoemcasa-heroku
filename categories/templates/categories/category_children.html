@@ -21,18 +21,17 @@
                             <p class="card-text">{{ category.description }}</p>
                             <div class="container product-price-block text-center">
                                 <span>
-                                    {{ category.count_stores }} lojas
+
                                 </span>
-                                |
                                 <span>
-                                    {{ category.count_children }} subcategorias
+                                    {{ category.count_stores }} loja(s)
                                 </span>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-top-light-custom text-center">
-                            <a href="category/{{ category.slug }}" class="btn btn-primary btn-sm m-1 btn-block">
+                            <a href="{{ category.parent.slug }}/{{ category.slug }}" class="btn btn-primary btn-sm m-1 btn-block">
                                 <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                Ver Mais
+                                Ver Lojas
                             </a>
                         </div>
                     </div>

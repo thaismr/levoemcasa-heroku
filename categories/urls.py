@@ -6,5 +6,8 @@ from . import views
 app_name = 'categories'
 
 urlpatterns = [
-    path('', views.ListCategories.as_view(), name='list'),
+    path('', views.CategoryList.as_view(), name='list'),
+    path('category', views.CategoryList.as_view(), name='list'),
+    path('category/<str:slug>', views.CategoryChildren.as_view(), name='children'),
+    path('category/<str:parent>/<str:slug>', views.CategoryDetails.as_view(), name='details'),
 ]

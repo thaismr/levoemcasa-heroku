@@ -7,32 +7,31 @@
             <div class="col-lg-12">
                 <div class="card-columns">
 
-                    {% for category in categories %}
+                    {% for store in stores %}
                     <div class="card">
 
-                        {% if category.image %}
-                        <a href="{{ category.slug }}">
-                            <img class="card-img-top" src="{{ category.image.url }}" alt="{{ category.name }}">
+                        {% if store.image %}
+                        <a href="{% url 'store:list' store.slug %}">
+                            <img class="card-img-top" src="{{ store.image.url }}" alt="{{ store.name }}">
                         </a>
                         {% endif %}
 
                         <div class="card-body">
-                            <h5 class="card-title">{{ category.name }}</h5>
-                            <p class="card-text">{{ category.description }}</p>
+                            <h5 class="card-title">{{ store.name }}</h5>
+                            <p class="card-text">{{ store.description }}</p>
                             <div class="container product-price-block text-center">
-                                <span>
-                                    {{ category.count_stores }} lojas
+                                <span class="product-price">
+
                                 </span>
-                                |
-                                <span>
-                                    {{ category.count_children }} subcategorias
+                                <span class="product-old-price text-muted">
+
                                 </span>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-top-light-custom text-center">
-                            <a href="category/{{ category.slug }}" class="btn btn-primary btn-sm m-1 btn-block">
+                            <a href="{% url 'store:list' store.slug %}" class="btn btn-primary btn-sm m-1 btn-block">
                                 <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                Ver Mais
+                                Ver Produtos
                             </a>
                         </div>
                     </div>
