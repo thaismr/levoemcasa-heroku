@@ -2,6 +2,7 @@ from django.shortcuts import redirect, Http404
 from django.db.models import Q, Count, Case, When
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView
+from django.views.generic import DetailView
 from django.contrib import messages
 # from comments.forms import CommentForm
 # from comments.models import Comment
@@ -26,3 +27,25 @@ class ProductIndex(ListView):
         #     )
         # )
         return qs
+
+
+class ProductDetails(DetailView):
+    model = Product
+    context_object_name = 'product'
+    # template_name = 'products/product_details.html'
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+
+        # get product slug
+        slug = self.kwargs.get('slug', None)
+
+        if not slug:
+            return qs
+
+        # filter store products
+        qs = qs.filter(slug__iexact=slug)
+        return qs
+
+
+

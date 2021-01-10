@@ -2,7 +2,7 @@ from django.contrib import admin
 from . models import Product, Variation
 
 
-class VariationInline(admin.TabularInline):
+class VariationInline(admin.StackedInline):
     model = Variation
     extra = 1
 
