@@ -10,7 +10,7 @@ from utils import img_utils, format
 class Product(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nome')
     store = models.ForeignKey(Store, on_delete=models.DO_NOTHING, verbose_name='Loja')
-    category = models.ManyToManyField(Category, related_name='items')
+    categories = models.ManyToManyField(Category, related_name='items')
     slug = models.SlugField(unique=True)
     summary = models.TextField(max_length=450, verbose_name='Resumo')
     description = models.TextField(verbose_name='Descricao')
