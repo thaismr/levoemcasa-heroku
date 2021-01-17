@@ -12,7 +12,7 @@ from . models import Category
 # Create your views here.
 class CategoryList(ListView):
     model = Category
-    paginate_by = 3
+    paginate_by = 4
     context_object_name = 'categories'
 
     def get_queryset(self):

@@ -3,49 +3,53 @@
 
 {% block content %}
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card-columns">
+   <!-- ===== Start of Popular Categories Section ===== -->
+    <section class="ptb80" id="categories">
+        <div class="container">
 
-                    {% for category in categories %}
-                    <div class="card">
+            <div class="section-title">
+                <h2>categorias principais</h2>
+            </div>
 
-                        {% if category.image %}
-                        <a href="{{ category.slug }}">
-                            <img class="card-img-top" src="{{ category.image.url }}" alt="{{ category.name }}">
-                        </a>
-                        {% endif %}
+            <div class="row nomargin">
 
-                        <div class="card-body">
-                            <h5 class="card-title">{{ category.name }}</h5>
-                            <p class="card-text">{{ category.description }}</p>
-                            <div class="container product-price-block text-center">
-                                <span>
-                                    {{ category.count_stores }} lojas
-                                </span>
-                                |
-                                <span>
-                                    {{ category.count_children }} subcategorias
-                                </span>
-                            </div>
+                {% for category in categories %}
+
+                <!-- Start of Category div -->
+                <div class="col-md-3 col-sm-6 col-xs-12 cat-wrapper">
+                    <div class="category ptb30">
+
+                        <!-- Icon -->
+                        <div class="category-icon">
+                            <i class="fa fa-folder-open"></i>
                         </div>
-                        <div class="card-footer bg-transparent border-top-light-custom text-center">
-                            <a href="category/{{ category.slug }}" class="btn btn-primary btn-sm m-1 btn-block">
-                                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                Ver Mais
-                            </a>
+
+                        <!-- Category Info - Title -->
+                        <div class="category-info pt30">
+                            <a href="{% url 'categories:children' category.slug %}">{{ category.name }}</a>
+                            <p>
+                                <span>{{ category.count_stores }} loja(s)</span>
+                                <span>{{ category.count_children }} subcategoria(s)</span>
+                            </p>
                         </div>
+
+                        <!-- Category Description -->
+                        <div class="category-descr">
+                            <span>{{ category.summary }}</span>
+                        </div>
+
                     </div>
-                    {% endfor %}
-
                 </div>
-            </div>
-        </div>
+                <!-- End of Category div -->
 
-        <div class="row mt-3">
-            <div class="col">
-                {% include '_pagination.html' %}
+                 {% endfor %}
+
             </div>
+
+                {% include '_pagination.html' %}
+
         </div>
+    </section>
+    <!-- ===== End of Popular Categories Section ===== -->
 
 {% endblock %}
