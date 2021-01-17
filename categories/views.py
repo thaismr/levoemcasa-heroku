@@ -51,6 +51,7 @@ class CategoryChildren(ListView):
 
 class CategoryDetails(ListView):
     model = Store
+    paginate_by = 3
     context_object_name = 'stores'
     template_name = 'categories/category_details.html'
 
