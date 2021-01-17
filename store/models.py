@@ -32,7 +32,7 @@ class Store(models.Model):
 
         # resize store logo
         logo_path = str(settings.MEDIA_ROOT + '/' + self.logo.name)
-        img_utils.img_resize(logo_path, 80)
+        img_utils.img_resize(logo_path, 200)
 
         # resize store front image
         img_path = str(settings.MEDIA_ROOT + '/' + self.image.name)

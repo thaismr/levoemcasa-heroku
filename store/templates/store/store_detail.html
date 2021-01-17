@@ -17,9 +17,11 @@
 
                 <!-- Start of Profile Picture -->
                 <div class="col-md-3 col-xs-12">
+                    {% if store.image %}
                     <div class="profile-photo">
-                        <img src="images/companies/envato.svg" class="img-responsive" alt="">
+                        <img src="{{ store.image.url }}" class="img-responsive" alt="">
                     </div>
+                    {% endif %}
 
                     <!-- Start of Social Media Buttons -->
                     <ul class="social-btns list-inline text-center mt20">
@@ -85,29 +87,29 @@
 
                         <!-- Profile Title -->
                         <div class="profile-title">
-                            <h2 class="capitalize">envato</h2>
-                            <h5 class="pt10">Marketplace</h5>
+                            <h2 class="capitalize">{{ store.name }}</h2>
+                            <h5 class="pt10">{{ store.slogan }}</h5>
                         </div>
 
                         <!-- Profile Details -->
                         <div class="profile-details mt20">
-                            <p>Envato Market is a collection of themed marketplaces, where creatives sell digital assets to help bring your ideas to life.</p>
+                            <p>{{ store.description }}</p>
                         </div>
 
                         <ul class="profile-info mt20 nopadding">
                             <li>
-                                <i class="fa fa-map-marker"></i>
-                                <span>Melbourn, Australia</span>
-                            </li>
-
-                            <li>
-                                <i class="fa fa-globe"></i>
-                                <a href="#">envato.com</a>
+                                <i class="fa fa-user"></i>
+                                <span>{{ store.admin }}</span>
                             </li>
 
                             <li>
                                 <i class="fa fa-phone"></i>
-                                <span>(+1) 123 456 7890</span>
+                                <span>(+21) 555 555 555</span>
+                            </li>
+
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <span>Rio de Janeiro</span>
                             </li>
                         </ul>
 
