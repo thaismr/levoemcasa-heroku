@@ -1,0 +1,62 @@
+{% load static %}
+<!-- =============== Start of Header 2 Navigation =============== -->
+    <header class="header2">
+        <nav class="navbar navbar-default navbar-static-top fluid_header centered">
+            <div class="container">
+
+                <!-- Logo -->
+                <div class="col-md-12">
+                    <a class="navbar-brand nomargin nopadding" href="/"><img src="{% static 'assets/images/logo.svg' %}" alt="logo"></a>
+                </div>
+
+                <!-- ======== Start of Main Menu ======== -->
+                <div class="col-md-12">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle toggle-menu menu-right push-body" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Start of Main Nav -->
+                    <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="main-nav">
+                        <ul class="nav navbar-nav">
+
+                            <!-- Mobile Menu Title -->
+                            <li class="mobile-title">
+                                <h4>main menu</h4></li>
+
+
+                            <!-- Simple Menu Item -->
+                            <li class="dropdown simple-menu active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">categorias<i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <!-- Dropdown Submenu -->
+                                    <li class="dropdown-submenu">
+                                        <a href="{% url 'categories:children' 'alimentos' %}">alimentos<i class="fa fa-angle-right"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{% url 'categories:details' 'alimentos' 'doces' %}">doces</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'categories:children' 'moda-beleza' %}">Moda & Beleza</a></li>
+                                    <li><a href="{% url 'categories:children' 'eventos' %}">Eventos</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Login Menu Item -->
+                            <li class="menu-item login-btn">
+                                <a id="modal_trigger" href="javascript:void(0)" role="button"><i class="fa fa-lock"></i>login</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- End of Main Nav -->
+                </div>
+                <!-- ======== End of Main Menu ======== -->
+
+            </div>
+        </nav>
+    </header>
+    <!-- =============== End of Header 2 Navigation =============== -->

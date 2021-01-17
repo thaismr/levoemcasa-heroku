@@ -3,48 +3,123 @@
 
 {% block content %}
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card-columns">
+ <!-- ===== Start of Store Profile Header Section ===== -->
+    <section class="profile-header">
+    </section>
+    <!-- ===== End of Store Header Section ===== -->
 
-                    {% for product in products %}
-                    <div class="card">
+     <!-- ===== Start of Main Wrapper Company Profile Section ===== -->
+    <section class="pb80" id="company-profile">
+        <div class="container">
 
-                        {% if product.image %}
-                        <a href="{% url 'store:details' product.store.slug product.slug %}">
-                            <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% endif %}
+            <!-- Start of Row -->
+            <div class="row company-profile">
 
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">{{ product.description }}</p>
-                            <div class="container product-price-block text-center">
-                                <span class="product-price">
-
-                                </span>
-                                <span class="product-old-price text-muted">
-
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-light-custom text-center">
-                            <a href="{% url 'store:details' product.store.slug product.slug %}" class="btn btn-primary btn-sm m-1 btn-block">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                Ver mais...
-                            </a>
-                        </div>
+                <!-- Start of Profile Picture -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="profile-photo">
+                        <img src="images/companies/envato.svg" class="img-responsive" alt="">
                     </div>
-                    {% endfor %}
+
+                    <!-- Start of Social Media Buttons -->
+                    <ul class="social-btns list-inline text-center mt20">
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll facebook transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-facebook"></i>
+                                    <i class="social-btn-roll-icon fa fa-facebook"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll twitter transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-twitter"></i>
+                                    <i class="social-btn-roll-icon fa fa-twitter"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll google-plus transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-google-plus"></i>
+                                    <i class="social-btn-roll-icon fa fa-google-plus"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll instagram transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-instagram"></i>
+                                    <i class="social-btn-roll-icon fa fa-instagram"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll linkedin transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-linkedin"></i>
+                                    <i class="social-btn-roll-icon fa fa-linkedin"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- End of Social Media Buttons -->
 
                 </div>
-            </div>
-        </div>
+                <!-- End of Profile Picture -->
 
-        <div class="row mt-3">
-            <div class="col">
-                {% include '_pagination.html' %}
+                <!-- Start of Profile Description -->
+                <div class="col-md-9 col-xs-12">
+                    <div class="profile-descr">
+
+                        <!-- Profile Title -->
+                        <div class="profile-title">
+                            <h2 class="capitalize">envato</h2>
+                            <h5 class="pt10">Marketplace</h5>
+                        </div>
+
+                        <!-- Profile Details -->
+                        <div class="profile-details mt20">
+                            <p>Envato Market is a collection of themed marketplaces, where creatives sell digital assets to help bring your ideas to life.</p>
+                        </div>
+
+                        <ul class="profile-info mt20 nopadding">
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <span>Melbourn, Australia</span>
+                            </li>
+
+                            <li>
+                                <i class="fa fa-globe"></i>
+                                <a href="#">envato.com</a>
+                            </li>
+
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <span>(+1) 123 456 7890</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- End of Profile Description -->
+
             </div>
+            <!-- End of Row -->
+
         </div>
+    </section>
+    <!-- ===== End of Company Profile Section ===== -->
 
 {% endblock %}

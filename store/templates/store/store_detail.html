@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load omfilters %}
+
+{% block content %}
+
+ <!-- ===== Start of Store Profile Header Section ===== -->
+    <section class="profile-header">
+    </section>
+    <!-- ===== End of Store Header Section ===== -->
+
+     <!-- ===== Start of Main Wrapper Company Profile Section ===== -->
+    <section class="pb80" id="company-profile">
+        <div class="container">
+
+            <!-- Start of Row -->
+            <div class="row company-profile">
+
+                <!-- Start of Profile Picture -->
+                <div class="col-md-3 col-xs-12">
+                    {% if store.image %}
+                    <div class="profile-photo">
+                        <img src="{{ store.image.url }}" class="img-responsive" alt="">
+                    </div>
+                    {% endif %}
+
+                    <!-- Start of Social Media Buttons -->
+                    <ul class="social-btns list-inline text-center mt20">
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll facebook transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-facebook"></i>
+                                    <i class="social-btn-roll-icon fa fa-facebook"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll twitter transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-twitter"></i>
+                                    <i class="social-btn-roll-icon fa fa-twitter"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll google-plus transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-google-plus"></i>
+                                    <i class="social-btn-roll-icon fa fa-google-plus"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll instagram transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-instagram"></i>
+                                    <i class="social-btn-roll-icon fa fa-instagram"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Social Media -->
+                        <li>
+                            <a href="#" class="social-btn-roll linkedin transparent">
+                                <div class="social-btn-roll-icons">
+                                    <i class="social-btn-roll-icon fa fa-linkedin"></i>
+                                    <i class="social-btn-roll-icon fa fa-linkedin"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- End of Social Media Buttons -->
+
+                </div>
+                <!-- End of Profile Picture -->
+
+                <!-- Start of Profile Description -->
+                <div class="col-md-9 col-xs-12">
+                    <div class="profile-descr">
+
+                        <!-- Profile Title -->
+                        <div class="profile-title">
+                            <h2 class="capitalize">{{ store.name }}</h2>
+                            <h5 class="pt10">{{ store.slogan }}</h5>
+                        </div>
+
+                        <!-- Profile Details -->
+                        <div class="profile-details mt20">
+                            <p>{{ store.description }}</p>
+                        </div>
+
+                        <ul class="profile-info mt20 nopadding">
+                            <li>
+                                <i class="fa fa-user"></i>
+                                <span>{{ store.admin }}</span>
+                            </li>
+
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <span>(+21) 555 555 555</span>
+                            </li>
+
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <span>Rio de Janeiro</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- End of Profile Description -->
+
+            </div>
+            <!-- End of Row -->
+
+        </div>
+    </section>
+    <!-- ===== End of Company Profile Section ===== -->
+
+{% endblock %}

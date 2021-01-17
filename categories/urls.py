@@ -7,7 +7,7 @@ app_name = 'categories'
 
 urlpatterns = [
     path('', views.CategoryList.as_view(), name='list'),
-    path('category', views.CategoryList.as_view(), name='list'),
-    path('category/<str:slug>', views.CategoryChildren.as_view(), name='children'),
-    path('category/<str:parent>/<str:slug>', views.CategoryDetails.as_view(), name='details'),
+    path('categorias', views.CategoryList.as_view(), name='list'),
+    path('categorias/<str:slug>', views.CategoryChildren.as_view(), name='children'),
+    path('categorias/<str:parent>/<str:slug>', views.CategoryDetails.as_view(), name='details'),
 ]

@@ -12,7 +12,7 @@ from . models import Category
 # Create your views here.
 class CategoryList(ListView):
     model = Category
-    paginate_by = 3
+    paginate_by = 4
     context_object_name = 'categories'
 
     def get_queryset(self):
@@ -27,7 +27,7 @@ class CategoryList(ListView):
 
 class CategoryChildren(ListView):
     model = Category
-    paginate_by = 3
+    paginate_by = 4
     template_name = 'categories/category_children.html'
     context_object_name = 'categories'
 
@@ -44,7 +44,6 @@ class CategoryChildren(ListView):
         # filter children with this parent's slug
         qs = qs.filter(parent__slug__iexact=slug)
         qs = qs.annotate(
-            count_products=Count('items'),
             count_stores=Count('store'),
         )
         return qs
@@ -52,6 +51,7 @@ class CategoryChildren(ListView):
 
 class CategoryDetails(ListView):
     model = Store
+    paginate_by = 3
     context_object_name = 'stores'
     template_name = 'categories/category_details.html'
 

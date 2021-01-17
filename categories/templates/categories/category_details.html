@@ -3,48 +3,47 @@
 
 {% block content %}
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card-columns">
+    <!-- ===== Start of Category Details Section ===== -->
+    <section class="ptb80" id="latest-news">
+        <div class="container">
 
-                    {% for store in stores %}
-                    <div class="card">
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Lojas Relacionadas</h2>
+            </div>
 
-                        {% if store.image %}
-                        <a href="{% url 'store:list' store.slug %}">
-                            <img class="card-img-top" src="{{ store.image.url }}" alt="{{ store.name }}">
+            {% for store in stores %}
+            <!-- Start of Blog Post -->
+            <div class="col-md-4 col-xs-12">
+                <div class="blog-post">
+
+                    {% if store.image %}
+                    <!-- Blog Post Image -->
+                    <div class="blog-post-thumbnail">
+                        <a href="{% url 'store:list' store.slug %}" class="hover-link">
+                            <img src="{{ store.image.url }}" alt="{{ store.name }}">
                         </a>
-                        {% endif %}
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{ store.name }}</h5>
-                            <p class="card-text">{{ store.description }}</p>
-                            <div class="container product-price-block text-center">
-                                <span class="product-price">
-
-                                </span>
-                                <span class="product-old-price text-muted">
-
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-light-custom text-center">
-                            <a href="{% url 'store:list' store.slug %}" class="btn btn-primary btn-sm m-1 btn-block">
-                                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                Ver Produtos
-                            </a>
-                        </div>
                     </div>
-                    {% endfor %}
+                    {% endif %}
+
+                    <!-- Blog Post Info -->
+                    <div class="post-info">
+                        <a href="{% url 'store:list' store.slug %}">{{ store.name }}</a>
+                        <p>{{ store.slogan }}</p>
+                    </div>
+
+                    <!-- Read More Button -->
+                    <a href="{% url 'store:list' store.slug %}" class="btn btn-blue btn-small btn-effect">visitar loja</a>
 
                 </div>
             </div>
-        </div>
+            <!-- End of Blog Post -->
+            {% endfor %}
 
-        <div class="row mt-3">
-            <div class="col">
-                {% include '_pagination.html' %}
-            </div>
+            {% include '_pagination.html' %}
+
         </div>
+    </section>
+    <!-- ===== End of Category Details Section ===== -->
 
 {% endblock %}

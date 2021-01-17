@@ -1,97 +1,50 @@
 {% load static %}<!doctype html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/custom/css/style.css' %}">
+    <!-- Mobile viewport optimized -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
 
-    <title>Levo em .Casa</title>
+    <!-- Meta Tags - Description for Search Engine purposes -->
+    <!-- TODO: Description and keywords from page specific SEO -->
+    <meta name="description" content="Levo em .Casa - Busca de produtos e servicos com entrega">
+    <meta name="keywords" content="produtos, servicos, entregas">
+    <meta name="author" content="appainter.net">
+
+    <!-- Website Title -->
+    <title>Levo em .casa</title>
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700,800|Varela+Round" rel="stylesheet">
+
+    <!-- CSS links -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
-        <a class="navbar-brand" href="/">Levoem.casa</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    {% include '_nav.html' %}
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Favoritos</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/">Alimentos</a>
-                        <a class="dropdown-item" href="/">Roupas</a>
-                        <a class="dropdown-item" href="/">Profissionais</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/">Todas as categorias</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-cart-link active" href="#">
-                        <span class="nav-cart-text mr-1">
-                            Carrinho
-                        </span>
-                        <span class="nav-cart-count mr-1">
-                            <strong>1x</strong>
-                        </span>
-                        <span class="nav-cart-icon mr-2">
-                            <i class="fas fa-shopping-cart"></i>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-        </div>
-    </nav>
-
-    <main class="container mt-4 mb-4">
 
         {% block content %}{% endblock %}
 
-    </main>
 
-    <footer class="container-fluid bg-primary">
-        <div class="container text-light">
-            <div class="row">
-                <div class="col">
-                    <div class="p-1">
-                        <span class="align-middle p-1">Powered by Django</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="p-1 text-right">
-                        <span class="align-middle p-1">levoem.casa &copy; 2020</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include '_footer.html' %}
 
-    <script src="{% static 'assets/bootstrap/js/jquery-3.2.1.slim.min.js' %}"></script>
-    <script src="{% static 'assets/bootstrap/js/popper.min.js' %}"></script>
-    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script defer src="{% static 'assets/font-awesome/js/all.js' %}"></script>
-    <script src="{% static 'assets/custom/js/scripts.js' %}"></script>
 </body>
 
 </html>
