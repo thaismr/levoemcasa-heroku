@@ -118,7 +118,7 @@ Author URI: gnodesign.com
 @import url(animate.css);
 @import url(magnific-popup.css);
 @import url(bootstrap-select.min.css);
-@import url(jquery-ui.min.css);
+/* @import url(jquery-ui.min.css); */
 
 /* --------------------------------------
     1. Default Typography
@@ -1062,7 +1062,7 @@ ul.list {
 
 section.page-header {
     position: relative;
-    background: url(../images/img/page-header.jpg) no-repeat;
+    background: url(../images/img/page-header.png) no-repeat;
     background-position: center center;
     background-size: cover;
     text-align: center;
@@ -1189,7 +1189,7 @@ section.page-header3 .breadcrumb > .active {
 
 section.page-header4 {
     position: relative;
-    background: url(../images/img/page-header.jpg) no-repeat;
+    background: url(../images/img/page-header.png) no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -3893,7 +3893,7 @@ form.post-job-resume .upload-file-btn input[type=file] {
 /********************** 8.3 Find Candidate Page ************************/
 
 section#find-candidate.page-header {
-    background: url(../images/img/candidate-bg.jpg) no-repeat;
+    background: url(../images/img/candidate-bg.png) no-repeat;
     background-size: cover;
 }
 
@@ -5055,7 +5055,7 @@ section#job-page .related-jobs .owl-dots .owl-dot.active span {
 /*** Version 1 ***/
 
 section#page-not-found {
-    background: url(../images/img/404-bg.png) no-repeat;
+    background: url(../images/img/404-bg.jpg) no-repeat;
     background-position: left center;
     text-align: center;
 }
@@ -5082,9 +5082,9 @@ section#page-not-found2 h2 {
     width: 100%;
     min-height: 100%;
     background-blend-mode: overlay;
-    background: url(../images/img/coming-soon-bg.png) no-repeat, -moz-linear-gradient(to right, #29b2fe -20%, #443088 120%);
-    background: url(../images/img/coming-soon-bg.png) no-repeat, -webkit-linear-gradient(to right, #29b2fe -20%, #443088 120%);
-    background: url(../images/img/coming-soon-bg.png) no-repeat, linear-gradient(to right, #29b2fe -20%, #443088 120%);
+    background: url(../images/img/coming-soon-bg.jpg) no-repeat, -moz-linear-gradient(to right, #29b2fe -20%, #443088 120%);
+    background: url(../images/img/coming-soon-bg.jpg) no-repeat, -webkit-linear-gradient(to right, #29b2fe -20%, #443088 120%);
+    background: url(../images/img/coming-soon-bg.jpg) no-repeat, linear-gradient(to right, #29b2fe -20%, #443088 120%);
     background-position: left center;
     z-index: 5;
 }
